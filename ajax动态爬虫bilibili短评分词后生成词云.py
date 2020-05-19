@@ -10,7 +10,6 @@ import matplotlib.pyplot as plt
 #https://api.bilibili.com/pgc/review/short/list?media_id=1586&ps=20&sort=0
 #https://api.bilibili.com/pgc/review/short/list?media_id=1586&ps=20&sort=0&cursor=78997352071387
 
-
 base_url = 'https://api.bilibili.com/pgc/review/short/list?'
 
 headers = {
@@ -92,17 +91,11 @@ def display():
     plt.axis("off") #隐藏坐标
     plt.show()
 
-
 if __name__ == '__main__':
     while check:
         json = get_page()
         parse_page(json)
         time.sleep(1)
-    # cnt = 0
-    # for cnt in range(3):
-    #     json = get_page()
-    #     parse_page(json)
-    #     time.sleep(1)
     for temp in comments:
         cut(temp)
     display()
