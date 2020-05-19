@@ -69,7 +69,9 @@ def parse_page(json):
             comments.append(comment)
 
 def cut(sentence):
-    words.extend(jieba.lcut(sentence,cut_all=True,HMM=True))
+    words.extend(jieba.lcut(sentence,cut_all=False,HMM=True))# 精确模式
+#     words.extend(jieba.lcut(sentence,cut_all=True,HMM=True))# 全模式
+#     words.extend(jieba.lcut_for_search (sentence, HMM=True))# 搜索引擎模式
 
 def display():
     wc = WordCloud(
